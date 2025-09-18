@@ -40,3 +40,90 @@ a {
     color-scheme: dark;
   }
 }
+
+header {
+  background-color: #ffffff !important;
+  color: #041e42 !important;
+  font-weight: bold;
+}
+.branding {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.site-name {
+  flex-basis: 30%;
+}
+.secondary-links {
+  flex-basis: 70%;
+  text-align: right;
+}
+.secondary-item { 
+ padding: 5px;
+ border: 1px solid #999;
+ border-radius: 3px;
+ width: max-content;
+ line-height: 0px;
+ float: right;
+}
+.secondary-item svg {
+  font-size: 20px;
+}
+
+header .MuiTypography-root {
+  width: 100%;
+}
+
+.layout-wrapper {
+  display: flex;
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  margin-top: 85px;
+  margin-left: 5px;
+}
+
+.main-content {
+  min-height: 430px;
+}
+
+.page-title {
+  font-size: 1.2rem;
+  color: #666;
+  position: relative;
+  height: 26px;
+}
+.page-title:after {
+  content: " ";
+  width: 80%;
+  height: 1px;
+  background-color: #999999;
+  position: absolute;
+  bottom:-2px;
+  left: 0;
+}
+
+.main-menu .MuiListItemIcon-root  {
+  min-width: 50px !important;
+}
+
+
+
+
+
+
+
+
+.footer-section {
+  width: 100%;
+  text-align: center;
+  /*background-color: #041e42;*/
+  padding: 12px 0;
+  color: #041e42;
+  font-size: 0.8rem;
+  border-top: 1px solid #999;
+}
