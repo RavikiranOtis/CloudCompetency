@@ -91,6 +91,15 @@ header .MuiTypography-root {
   min-height: 430px;
 }
 
+.collapse-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #041e42 !important;
+  text-align: center;
+  padding: 0 30px;
+  border-bottom: 1px solid #999;
+}
+
 .page-title {
   font-size: 1.2rem;
   color: #666;

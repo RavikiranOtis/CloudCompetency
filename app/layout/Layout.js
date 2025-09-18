@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { useState } from "react";
 import { styled, useTheme } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
@@ -95,14 +95,16 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 export default function Layout({ children }) {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = useState(false);
+  const [burgerState, setBrgerState] = useState("close");
   const handleDrawerOpen = () => {
     setOpen(true);
+    setBrgerState("open");
   };
 
   const handleDrawerClose = () => {
     setOpen(false);
+    setBrgerState("close");
   };
 
   return (
@@ -114,12 +116,7 @@ export default function Layout({ children }) {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={[
-              {
-                marginRight: 4,
-              },
-              open && { display: 'none' },
-            ]}
+            style={burgerState == 'close' ? { marginRight: 4 } : { display: 'none' }}
           >
             <MenuIcon />
           </IconButton>
@@ -131,7 +128,7 @@ export default function Layout({ children }) {
       </AppBar>
       <Drawer variant="permanent" open={open}>
         <DrawerHeader>
-          Otis
+          <div className="collapse-title">Otis</div>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
@@ -145,6 +142,6 @@ export default function Layout({ children }) {
         <div className='footer-section'><Footer /></div>
       </div>
 
-    </div>
+    </div >
   );
 }
